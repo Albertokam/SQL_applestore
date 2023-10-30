@@ -13,7 +13,7 @@ For this project we are going to use the following Apple Store dataset from [Kag
 
 ## 2. Data Preparation
 We have 5 files: 1 for Apple Store main characteristics (like name, rating, genre) and then 4 files of description field of each app. 
-First, we will merge this 4 files into a new one called "applestore_description_combined", then we will work with only two files (AppleStore and applestore_description_combined).
+First, we will merge this 4 files into a new one called "applestore_description_combined", then we will work with only two files ("AppleStore" and "applestore_description_combined").
 
 ```sql
 Create TABLE applestore_description_combined AS
@@ -63,12 +63,15 @@ where app_desc is NULL
 The Dataset is quite well maintained as there are not missing values in key fields.
 
 3.3. Find out the number of apps per genre 
-´´´sql
+```sql
 SELECT prime_genre, count(*) as num_apps
 from AppleStore 
 group by prime_genre
 order by num_apps DESC
 ```
+
+![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/d97e3c66-27cd-45b6-b26b-1ed3c4e537e2)
+
 
 
 
