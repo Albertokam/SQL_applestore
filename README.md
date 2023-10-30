@@ -72,6 +72,20 @@ order by num_apps DESC
 
 ![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/d97e3c66-27cd-45b6-b26b-1ed3c4e537e2)
 
+3.4. Get an overview of the apps ratings
+```sql
+Select  min(user_rating) as min_rating,
+		max(user_rating) as max_rating,
+        avg(user_rating) as avg_rating
+FROM AppleStore
+```
+
+![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/e0f4b43f-84c9-47af-aab4-905af5c7922f)
+With this check we ensure the rating values make sense (they are between 0 and 5). This is a good sign again. In general, the Dataset seems to be quite comprehensive.
+
+
+
+
 
 
 
