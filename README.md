@@ -42,8 +42,7 @@ from AppleStore
 SELECT COUNT(DISTINCT id) as uniqueapp_id2s
 from applestore_description_combined
 ````
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/025b34a5-9821-4c81-9e86-bdeb6c60413a)
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/c8107b40-bed9-4e89-952b-4ccdb1579094)
+![distinct](../Screenshots/2.png)
 
 3.2. Check for any missing key fileds value in both files
 ```sql
@@ -56,8 +55,7 @@ from applestore_description_combined
 where app_desc is NULL
 ```
 
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/808bc5c9-ba66-41d9-a39b-026de16b2ddc)
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/0b237ede-9edc-4ca5-bb1d-a6efa8eff1aa)
+![missing](../Screenshots/3.png)
 
 The Dataset is quite well maintained as there are not missing values in key fields.
 
@@ -69,9 +67,9 @@ group by prime_genre
 order by num_apps DESC
 ```
 
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/d97e3c66-27cd-45b6-b26b-1ed3c4e537e2)
+![Top_Ten_genres](../Screenshots/4.png)
 
-Here there is a huge difference between Games (which is the genre containing more apps) and the rest of genres. This is a good insight for the Stakeholder.
+There is a huge difference between Games (which is the genre containing more apps) and the rest of genres. In fact, this is a good insight for the Stakeholder, since Games looks like a very competitive genre.
 
 3.4. Get an overview of the apps ratings
 ```sql
@@ -81,7 +79,7 @@ Select  min(user_rating) as min_rating,
 FROM AppleStore
 ```
 
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/e0f4b43f-84c9-47af-aab4-905af5c7922f)
+![rating_values](../Screenshots/5.png)
 
 With this check we ensure the rating values make sense (they are between 0 and 5). This is a good sign again. In general, the Dataset seems to be quite comprehensive.
 
