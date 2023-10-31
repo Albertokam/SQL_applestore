@@ -12,8 +12,10 @@ For this project we are going to use the following Apple Store dataset from [Kag
 
 
 ## 2. Data Preparation
-We have 5 files: 1 for Apple Store main characteristics (like name, rating, genre) and then 4 files of description field of each app. 
-First, we will merge this 4 files into a new one called "applestore_description_combined", then we will work with only two files ("AppleStore" and "applestore_description_combined").
+Dataset contains 5 files: 
+1 for Apple Store main characteristics (like name, rating, genre) 
+4 files of description field of each app. 
+In order to work with them, we will merge this 4 files into a new one called "applestore_description_combined", this way we will work only withtwo files ("AppleStore" and "applestore_description_combined").
 
 ```sql
 Create TABLE applestore_description_combined AS
@@ -170,4 +172,4 @@ a.rank=1
 ```
 ![top_rated](../Screenshots/10.png)
 
-This is just a summary of top-rated apps that could be used in case we want to check them directly from the applestore and see how they look like, design aspects, options, etc...
+This is just a summary of top-rated apps that could be used in case we want to check them directly from the Apple Store and see how they look like, design aspects, options, etc...
