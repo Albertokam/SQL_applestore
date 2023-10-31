@@ -1,6 +1,6 @@
 # Apple Store (SQL Analysis project)
 
-## 1. General Info
+## 1. General Project Info
 #### Project Overview
 This data analysis is aim to provide insights into the apple store marketplace´s apps. The stakeholder is a fresh app developer who is interested about some data analysis before start to develop his own app. Information regarding most profitable genres, minimum features, and in general some recomendations that could hep him with decision making.
 
