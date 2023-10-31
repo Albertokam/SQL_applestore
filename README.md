@@ -83,9 +83,86 @@ FROM AppleStore
 
 With this check we ensure the rating values make sense (they are between 0 and 5). This is a good sign again. In general, the Dataset seems to be quite comprehensive.
 
+## 4. Data Analysis
+4.1. Check if paid apps have higher rating
 
+```sql
+SELECT CASE
+	WHEN price > 0 THEN 'PAID'
+	ELSE 'FREE'
+	END AS app_type,
+	avg(user_rating) as avg_rating
+FROM AppleStore
+	GROUP BY app_type
+```
+![paid_unpaid](../Screenshots/6.png)
+We can see, that paid apps have a slightly higher rating in average.
 
+4.2. Check if apps with more supported languages have higher rating
 
+```sql
+SELECT CASE
+	WHEN lang_num < 10 then '<10 languages'
+    	WHen lang_num BETWEEN 10 AND 30 then '10<30 languages'
+    	When lang_num > 30 then '>30 languages'
+    	END as language_bucket,
+    	avg(user_rating) as avg_rating
+FROM AppleStore
+            GROUP by language_bucket
+            ORDER BY avg_rating DESC
+```
+![languages](../Screenshots/7.png)
+Here, we can observe that more number of languages is not linked to a higher rating. So, the app should concentrate on the target languages rather than try to include more than needed.
 
+4.3. Check genres with low rating in order to see opportunities for market penetration 
 
+```sql
+	SELECT 	prime_genre, 
+		avg(user_rating) as avg_rating
+       	FROM AppleStore
+        	GROUP BY prime_genre
+        	order by avg_rating ASC
+        	LIMIT 10
+```
+![lowest](../Screenshots/8.png)
+This could be interensting in case stakeholders wanted to penetrate a low performance genre with a really good app and get all the attention from the users.
 
+4.4. Check if there is any correlation between app description lenght and rating
+
+```sql
+	SELECT CASE
+	When length (b.app_desc)< 100 then 'short'
+        When length (b.app_desc) BETWEEN 100 and 1000 then 'medium'
+        ELSE 'long'
+        END as description_length_bucket,
+        avg(user_rating) as avg_rating
+        
+FROM AppleStore as a 
+JOIN applestore_description_combined as b 
+ON a.id = b.id
+
+	group by description_length_bucket
+        order by avg_rating DESC
+```
+![description_lenght](../Screenshots/9.png)
+This is actually quite a finding, since the lenght of the description is directly correlate to the rating. So stakeholders should spend time on this topic.
+
+4.5. Check top-rated apps for each genre 
+```sql
+SELECT 
+		prime_genre,
+        track_name,
+        user_rating
+FROM (
+		SELECT 
+		prime_genre,
+        track_name,
+        user_rating,
+  		RANK() OVER(PARTITION BY prime_genre order BY user_rating DESC, rating_count_tot DESC) AS rank
+  		FROM
+  		AppleStore) as a 
+WHERE
+a.rank=1
+```
+![top_rated](../Screenshots/10.png)
+This is just a summary of top-rated apps that could be used in case we want to check them directly from the applestore and see how they look like, design aspects, options, etc...
