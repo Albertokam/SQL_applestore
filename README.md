@@ -96,6 +96,7 @@ FROM AppleStore
 	GROUP BY app_type
 ```
 ![paid_unpaid](../Screenshots/6.png)
+
 We can see, that paid apps have a slightly higher rating in average.
 
 4.2. Check if apps with more supported languages have higher rating
@@ -112,6 +113,7 @@ FROM AppleStore
             ORDER BY avg_rating DESC
 ```
 ![languages](../Screenshots/7.png)
+
 Here, we can observe that more number of languages is not linked to a higher rating. So, the app should concentrate on the target languages rather than try to include more than needed.
 
 4.3. Check genres with low rating in order to see opportunities for market penetration 
@@ -125,6 +127,7 @@ Here, we can observe that more number of languages is not linked to a higher rat
         	LIMIT 10
 ```
 ![lowest](../Screenshots/8.png)
+
 This could be interensting in case stakeholders wanted to penetrate a low performance genre with a really good app and get all the attention from the users.
 
 4.4. Check if there is any correlation between app description lenght and rating
@@ -145,6 +148,7 @@ ON a.id = b.id
         order by avg_rating DESC
 ```
 ![description_lenght](../Screenshots/9.png)
+
 This is actually quite a finding, since the lenght of the description is directly correlate to the rating. So stakeholders should spend time on this topic.
 
 4.5. Check top-rated apps for each genre 
@@ -165,4 +169,5 @@ WHERE
 a.rank=1
 ```
 ![top_rated](../Screenshots/10.png)
+
 This is just a summary of top-rated apps that could be used in case we want to check them directly from the applestore and see how they look like, design aspects, options, etc...
