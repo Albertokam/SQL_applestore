@@ -32,8 +32,7 @@ Union ALL
 
 SELECT * from appleStore_description4
 ```
-![image](https://github.com/Albertokam/SQL_applestore/assets/149379816/caedc6f7-89ba-4bcd-ba04-57ca4cdd8ecd)
-
+![union_all](../Screenshots/1.png)
 ## 3. Exploratory Data Analysis (EDA)
 3.1. We want to check if the info contained in both files is consistent. For this, we are going to check if the total number of apps included in both files is the same.
 ```sql
