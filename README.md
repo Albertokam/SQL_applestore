@@ -5,7 +5,7 @@
 This data analysis is aim to provide insights into the apple store marketplace´s apps. The stakeholder is a fresh app developer who is interested about some data analysis before start to develop his own app. Information regarding most profitable genres, minimum features, and in general some recomendations that could hep him with decision making.
 
 #### Data Source 
-For this project we are going to use the following Apple Store dataset from [Kaggle.com](https://www.kaggle.com/datasets/leandrojnr/applestore-database). It contains several documents, so we would need to work on them in order to extract some information.
+For this project we are going to use the following Apple Store dataset from [Kaggle.com](https://www.kaggle.com). It contains [several documents](https://github.com/Albertokam/SQL_applestore/tree/Images), so we would need to work on them in order to extract some information.
 
 #### Tools
 - [SQL Online Server](https://sqliteonline.com/)
