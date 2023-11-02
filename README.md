@@ -116,7 +116,7 @@ FROM AppleStore
 ```
 ![languages](../Screenshots/7.png)
 
-Here, we can observe that more number of languages is not linked to a higher rating. So, the app should concentrate on the target languages rather than try to include more than needed.
+Here, we can observe that more number of languages is not linked to a higher rating. So, the app should concentrate on the target languages rather than try to include a high number of languages.
 
 4.3. Check genres with low rating in order to see opportunities for market penetration 
 
@@ -130,7 +130,7 @@ Here, we can observe that more number of languages is not linked to a higher rat
 ```
 ![lowest](../Screenshots/8.png)
 
-This could be interensting in case stakeholders wanted to penetrate a low performance genre with a really good app and get all the attention from the users.
+This could be interensting in case stakeholders wanted to penetrate a low performance genre. 
 
 4.4. Check if there is any correlation between app description lenght and rating
 
@@ -151,7 +151,7 @@ ON a.id = b.id
 ```
 ![description_lenght](../Screenshots/9.png)
 
-This is actually quite a finding, since the lenght of the description is directly correlate to the rating. So stakeholders should spend time on this topic.
+This is actually quite a finding, since the lenght of the description is directly correlate to the rating. So stakeholders should spend time analyzing this topic.
 
 4.5. Check top-rated apps for each genre 
 ```sql
@@ -172,4 +172,21 @@ a.rank=1
 ```
 ![top_rated](../Screenshots/10.png)
 
-This is just a summary of top-rated apps that could be used in case we want to check them directly from the Apple Store and see how they look like, design aspects, options, etc...
+This is just a summary of top-rated apps that could be used in case we want to check them directly from the Apple Store and see how they look like, design aspects, or available options.
+
+## 5. Final Recomendations based on our analysis
+
+5.1. Paid apps have a higher rating
+As we have found, during the analysis, paid apps have a slightly higher rating, meaning stakeholders should consider charging for an app if the quality is good enough and this is will be well perceipted by users.
+
+5.2. Apps supporting a number of languages between 10 and 30 have better ratings
+From this finding, we can observe that apps do not need a high amount of languages. Instead of this, they should concentrate on key languages in order to develop a good eperience. So, stakeholders should check market audience before to develop this feature.
+
+5.3. Finance and Books have a low rating
+This could be a potential opportunity for developers that design a high quality app. Since the market standards seem to be low, a good product could have a lot of attention.
+
+5.4. Apps with longer description have a higher rating
+Users really appreciate longer descriptions where content and user expectations are clearly explained. This should be a key point, since could be a user`s filter before downloading the app. 
+
+5.5. New app should aim for an average rating above 3,5
+3,5 is the average rating for apps, so a new app should be rated above in order to stand out. This is really important at the beginning of the product cycle life since this is checked by users before downloading.
